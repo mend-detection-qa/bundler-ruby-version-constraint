@@ -1,10 +1,13 @@
 {
-  "description": "Autotest configuration for bundler-ruby-version-constraint P2 probe — validates ruby version constraint in Gemfile is treated as metadata, not a dependency. 3 direct deps (rack, json, multi_json), all leaf nodes.",
+  "description": "Autotest configuration for bundler-ruby-version-constraint - Bundler ruby version constraint as metadata",
   "version": 1.7,
   "base_config": {
     "validate_scan_output": true,
     "scan_output": {
-      "security_scan_report_conclusion": "success",
+      "security_scan_report_conclusion": "failure",
+      "total_libs_scanned": {
+        "eq": 3
+      },
       "expected_messages": []
     },
     "validate_dependency_tree": true,
@@ -17,27 +20,28 @@
       "expected_direct_dependencies_number": {
         "eq": 3
       },
+      "expected_transitive_dependencies_number": {
+        "eq": 0
+      },
       "direct_dependencies_names_list": {
-        "contains": [
-          "rack",
-          "json",
-          "multi_json"
+        "eq": [
+          "json-2.19.4.gem",
+          "multi_json-1.20.1.gem",
+          "rack-3.2.6.gem"
         ]
       },
       "transitive_dependencies_names_list": {
-        "contains": []
+        "eq": []
       },
       "expected_package_managers": {
-        "contains": [
-          "ruby"
-        ]
+        "contains": ["ruby"]
       },
       "validate_agent_versions": false,
       "expected_agent_version": "",
       "expected_plugin_version": "",
       "validate_mend_tags": false
     },
-    "validate_vulnerabilities_table": true,
+    "validate_vulnerabilities_table": false,
     "vulnerabilities_table": {
       "check_vulnerabilities_table_structure": true,
       "expected_total_vulnerabilities_number": {
@@ -60,19 +64,33 @@
     "reachability": {
       "check_reachability_status": true,
       "validate_issues": false,
-      "expected_reachable_cves": { "contains": [] },
-      "expected_unreachable_cves": { "contains": [] },
-      "expected_reachable_libraries": { "contains": [] },
-      "expected_unreachable_libraries": { "contains": [] },
-      "expected_total_reachable_count": { "gte": 0 },
-      "expected_total_unreachable_count": { "gte": 0 },
+      "expected_reachable_cves": {
+        "contains": []
+      },
+      "expected_unreachable_cves": {
+        "contains": []
+      },
+      "expected_reachable_libraries": {
+        "contains": []
+      },
+      "expected_unreachable_libraries": {
+        "contains": []
+      },
+      "expected_total_reachable_count": {
+        "gte": 0
+      },
+      "expected_total_unreachable_count": {
+        "gte": 0
+      },
       "expected_reachability_traces": []
     },
-    "validate_project_contributors": false,
+    "validate_project_contributors": true,
     "contributors": {
       "check_contributors_structure": true,
       "expected_contributors": [],
-      "expected_min_commits": { "gte": 1 },
+      "expected_min_commits": {
+        "gte": 1
+      },
       "expected_total_contributors": {}
     }
   }
