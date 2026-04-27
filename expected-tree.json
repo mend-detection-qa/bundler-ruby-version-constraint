@@ -1,0 +1,77 @@
+{
+  "_comment": "Expected dependency tree for the bundler-ruby-version-constraint probe. The Gemfile declares a ruby '~> 3.2' constraint and an engine block; these are runtime platform metadata and must NOT appear in the dependency tree. All three direct gems (rack, json, multi_json) are leaf nodes with no transitive dependencies. Versions pinned to Bundler 2.5.3 resolution against rubygems.org as of 2026-04-27.",
+  "updateType": "OVERRIDE",
+  "type": "UPDATE",
+  "agent": "generic-bundler",
+  "agentVersion": "0.0.0",
+  "pluginVersion": "0.0.0",
+  "orgToken": "__PLACEHOLDER__",
+  "userKey": "__PLACEHOLDER__",
+  "timeStamp": 0,
+  "requesterEmail": "__PLACEHOLDER__",
+  "aggregateModules": false,
+  "preserveModuleStructure": false,
+  "extraProperties": {
+    "contributionsAvailable": "false",
+    "commitUrl": "__PLACEHOLDER__",
+    "gitHubInstallationId": "__PLACEHOLDER__",
+    "scmApplicationId": "__PLACEHOLDER__",
+    "branchName": "main",
+    "checkRunId": "__PLACEHOLDER__",
+    "userOrgToken": "__PLACEHOLDER__",
+    "commitId": "__PLACEHOLDER__",
+    "scmInstallationId": "__PLACEHOLDER__",
+    "repository": "mend-detection-qa/bundler-ruby-version-constraint",
+    "scaResults": "__PLACEHOLDER__"
+  },
+  "scanSummaryInfo": {
+    "totalElapsedTime": 0,
+    "stepsSummaryInfo": [],
+    "packageManagers": ["RUBYGEMS"],
+    "isPrivileged": false,
+    "scanMethod": {
+      "type": "PackageManager"
+    }
+  },
+  "contributions": [],
+  "projects": [
+    {
+      "projectToken": "__PLACEHOLDER__",
+      "dependencies": [
+        {
+          "artifactId": "rack",
+          "version": "3.2.6",
+          "groupId": "",
+          "systemPath": "",
+          "optional": false,
+          "filename": "rack-3.2.6.gem",
+          "dependencyFile": "Gemfile.lock",
+          "dependencyType": "RESOLVED",
+          "children": []
+        },
+        {
+          "artifactId": "json",
+          "version": "2.19.4",
+          "groupId": "",
+          "systemPath": "",
+          "optional": false,
+          "filename": "json-2.19.4.gem",
+          "dependencyFile": "Gemfile.lock",
+          "dependencyType": "RESOLVED",
+          "children": []
+        },
+        {
+          "artifactId": "multi_json",
+          "version": "1.20.1",
+          "groupId": "",
+          "systemPath": "",
+          "optional": false,
+          "filename": "multi_json-1.20.1.gem",
+          "dependencyFile": "Gemfile.lock",
+          "dependencyType": "RESOLVED",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
